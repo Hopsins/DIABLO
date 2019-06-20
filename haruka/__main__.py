@@ -138,7 +138,7 @@ def send_start(bot, update):
 Need any help click or press /help 🙋.\n\n"
 
     text += "Im managed by [AVATAR](t.me/refundisillegal)🙂\n\n\
-               Want to add me in your group? [Click here!](t.me/ctrln_Bot?startgroup=true)\n\
+               Want to add me in your group? [Click here!](t.me/ctrln_Bot?startgroup=true)"
 
 
    
