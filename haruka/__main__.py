@@ -134,12 +134,12 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hey there! My name is ThugBot - I'm here to help you manage your groups!\n\
-Click Help button to find out more about how to use me to my full potential.\n\n"
+    text = "Hi londe, {} ! My name is CTRLBOT - I'm here to help you manage your groups okhay!\n\
+Need any help click or press /help 🙋.\n\n"
 
-    text += "Special Thanks to @peaktogoo & His Bot @HarukaAyaBot 🙂\n\n\
-My Souce Available Here [Source](https://github.com/Prakasaka/HarukaAya)\n\n\
-Want to add me to your group? [Click here!](t.me/TheThuggBot?startgroup=true)"
+    text += "Im managed by [AVATAR](t.me/refundisillegal)🙂\n\n\
+Want to add me in your group? [Click here!](t.me/ctrln_Bot?startgroup=true)"\n
+
 
    
     keyboard = [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
@@ -156,7 +156,7 @@ def control_panel(bot, update):
     user = update.effective_user
 
     # ONLY send help in PM
-    if chat.type != chat.PRIVATE:
+    if chat.type != chat.PRIVATE
 
         update.effective_message.reply_text("Contact me in PM to access the control panel.",
                                             reply_markup=InlineKeyboardMarkup(
