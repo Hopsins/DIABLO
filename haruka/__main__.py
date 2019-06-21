@@ -122,7 +122,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("RIP ThugBot 😭 Press F For Pay Respect")
+        update.effective_message.reply_text("Yo,im alive👩")
 
 
 def send_start(bot, update):
@@ -134,12 +134,12 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hey there! My name is ThugBot - I'm here to help you manage your groups!\n\
+    text = "Hey there londe! My name is CTRL - I'm here to help you manage your groups!\n\
 Click Help button to find out more about how to use me to my full potential.\n\n"
 
-    text += "Special Thanks to @peaktogoo & His Bot @HarukaAyaBot 🙂\n\n\
-My Souce Available Here [Source](https://github.com/Prakasaka/HarukaAya)\n\n\
-Want to add me to your group? [Click here!](t.me/TheThuggBot?startgroup=true);)"
+    text += "Need any help press help anytime beb /start im always on🙂\n\n\
+Im managed by [AVATAR](t.me/refundisillegal)\n\n\
+Want to add me to your group? [Click here!](t.me/ctrln_Bot?startgroup=true);)"
 
    
     keyboard = [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
