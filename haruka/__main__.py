@@ -138,8 +138,8 @@ def send_start(bot, update):
 Need any help click or press /help 🙋.\n\n"
 
     text += "Im managed by [AVATAR](t.me/refundisillegal)🙂\n\n\
-            Join Our [Help Support Chat](t.me/ctrlhelpsupport)\n\n
-            Want to add me in your group? [Click here!](t.me/ctrln_Bot?startgroup=true)"\
+Join Our [Help Support Chat](t.me/ctrlhelpsupport)\n\n
+Want to add me in your group? [Click here!](t.me/ctrln_Bot?startgroup=true);)"
 
    
     keyboard = [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
