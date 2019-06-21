@@ -156,7 +156,7 @@ def control_panel(bot, update):
     user = update.effective_user
 
     # ONLY send help in PM
-    if chat.type != chat.PRIVATE
+    if chat.type != chat.PRIVATE:
 
         update.effective_message.reply_text("Contact me in PM to access the control panel.",
                                             reply_markup=InlineKeyboardMarkup(
