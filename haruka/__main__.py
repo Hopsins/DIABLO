@@ -134,8 +134,8 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hi londe, {} ! My name is CTRLBOT - I'm here to help you manage your groups okhay!\n\
-Need any help click or press /help 🙋.\n\n"\
+    text = "Hi londe, { } ! My name is CTRLBOT - I'm here to help you manage your groups okhay!\n\n\
+Need any help click or press /help 🙋.\n\n\
 
     text += "Im managed by [AVATAR](t.me/refundisillegal)🙂\n\n\
 Join Our [Help Support Chat](t.me/ctrlhelpsupport)\n\n\
