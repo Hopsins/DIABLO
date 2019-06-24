@@ -138,7 +138,7 @@ def send_start(bot, update):
 Click Help button to find out more about how to use me to my full potential.\n\n"
 
     text += "Need any help press help anytime beb /start im always on🙂\n\n\
-Im managed by [AVATAR](t.me/refundisillegal)\n\n\
+Im managed by [AVATAR](@refundisillegal)\n\n\
 Want to add me to your group? [Click here!](t.me/ctrln_Bot?startgroup=true);)"
 
    
@@ -176,7 +176,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "ThugBot is best bot 🔥" #LMAO, don't uncomment
+        M_match = "CtrlBot is best bot 🔥" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
