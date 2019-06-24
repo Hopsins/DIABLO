@@ -138,7 +138,7 @@ def send_start(bot, update):
 Click Help button to find out more about how to use me to my full potential.\n\n"
 
     text += "Need any help press help anytime beb /start im always on🙂\n\n\n\
-Im managed by [AVATAR]("@refundisillegal")
+I'm managed by [AVATAR](t.me/refundisillegal)\n\n\
 Want to add me to your group? [Click here!](t.me/ctrln_Bot?startgroup=true);)"
 
    
