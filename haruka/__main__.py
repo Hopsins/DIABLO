@@ -137,8 +137,8 @@ def send_start(bot, update):
     text = "Hey there londe! My name is CTRL - I'm here to help you manage your groups!\n\
 Click Help button to find out more about how to use me to my full potential.\n\n"
 
-    text += "Need any help press help anytime beb /start im always on🙂\n\n\
-Im managed by [AVATAR](@refundisillegal)\n\n\
+    text += "Need any help press help anytime beb /start im always on🙂\n\n\\n\
+Im managed by [AVATAR]tg://user?id={594813047})\n\n\
 Want to add me to your group? [Click here!](t.me/ctrln_Bot?startgroup=true);)"
 
    
