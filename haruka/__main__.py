@@ -28,10 +28,7 @@ I'm managed by my master😎 [AVATAR](T.ME/REFUNDISillegal),
 
 Join our officially supported grouo At [CTRL HELP SUPPORT](T.ME/CTRLHELPSUPPORT).\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for [my creator](t.me/refundisillegal) to get me to where I am now, and every donation helps \
-motivate him to make me even better. All the donation money will go to a better VPS to host me \. 
-https://paypal.me/AVATARX0TIC ."""
+Thanks to @prakaska sar
 
 
 IMPORTED = {}
