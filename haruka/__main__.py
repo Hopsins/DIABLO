@@ -28,7 +28,7 @@ I'm managed by my master😎 [AVATAR](T.ME/REFUNDISillegal),
 
 Join our officially supported grouo At [CTRL HELP SUPPORT](T.ME/CTRLHELPSUPPORT).\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
-Thanks to @prakaska sar
+
 
 
 IMPORTED = {}
