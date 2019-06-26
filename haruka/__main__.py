@@ -22,7 +22,7 @@ from haruka.modules.connection import connected
 
 PM_START = """Hi londe {}, Im {} - I'm here to help you manage your groups!
 
-I'm a modular group manager bot.                             Need any help press help button /help Im always on beb😉.
+I'm a modular group manager bot.                             Need any help press help button,            Im always on beb😉.
 
 I'm managed by my master😎 [AVATAR](T.ME/REFUNDISillegal),
 
