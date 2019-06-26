@@ -26,7 +26,7 @@ I'm a modular group manager bot,need any help press help button /help always on 
 
 I'm managed by my master😎 [AVATAR](T.ME/REFUNDISillegal),
 
-Join our officially supported grouo At [CTRL HELP SUPPORT](T.ME/CTRLHELPSUPPORT).\n\nWant to add me to your group? [Click here!](t.me/Monicarobot?startgroup=true)"""
+Join our officially supported grouo At [CTRL HELP SUPPORT](T.ME/CTRLHELPSUPPORT).\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
 It took lots of work for [my creator](t.me/refundisillegal) to get me to where I am now, and every donation helps \
@@ -128,7 +128,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Yo,I m alive👩?")
 
 
 def send_start(bot, update):
