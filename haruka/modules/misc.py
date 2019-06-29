@@ -181,7 +181,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += tld(chat.id, "\nUser link: {}\n").format(mention_html(user.id, "link"))
 
     if user.id == OWNER_ID:
-        text += tld(chat.id, "\n\nAy, This is [AVATAR](t.me/Refundisillegal) my owner. I would never do anything against him!")
+        text += tld(chat.id, "\n\nAy, This is  my owner as well as creator so I would never do anything against him!")
     else:
         if user.id in SUDO_USERS:
             text += tld(chat.id, "\nThis person is one of my sudo users! " \
