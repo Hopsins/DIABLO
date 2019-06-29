@@ -91,7 +91,7 @@ def new_member(bot: Bot, update: Update):
         for new_mem in new_members:
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                bot.send_message(chat.id, "Ayyy. My creator [AVATAR](T.ME/REFUNDISILLEGAL) just joined the group")
+                bot.send_message(chat.id, "Ayyy. My creator AVATAR 😎 just joined the group")
                 continue
 
             # Give start information when add bot to group
