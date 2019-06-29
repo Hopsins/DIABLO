@@ -93,6 +93,11 @@ def new_member(bot: Bot, update: Update):
             if new_mem.id == OWNER_ID:
                 bot.send_message(chat.id, "Ayyy. My creator AVATAR 😎 just joined the group")
                 continue
+                
+                # Give the sudo a special welcome
+            if new_mem.id == 839894103:
+                bot.send_message(chat.id, "Yo . Sudo user is here,welcome")
+                continue
 
             # Give start information when add bot to group
             elif new_mem.id == bot.id:
