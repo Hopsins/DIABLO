@@ -39,7 +39,7 @@ BOT_STRINGS = (
     "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot(@ctrln_bot)!!!",
 )    
 
-H_STRINGS = [
+Hi_STRINGS = [
     "Hello☺ im CTRL Bot By AVATAR💪"
 ]
 RAPE_STRINGS = (
@@ -67,8 +67,8 @@ def pubg(bot: Bot, update: Update):
     
         
 @run_async
-def h(bot: Bot, update: Update):
-    update.effective_message.reply_text(random.choice(F_STRINGS))
+def hi(bot: Bot, update: Update):
+    update.effective_message.reply_text(random.choice(Hi_STRINGS))
     
     
 
