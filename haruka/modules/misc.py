@@ -39,6 +39,9 @@ BOT_STRINGS = (
     "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot(@ctrln_bot)!!!",
 )    
 
+Hi_STRINGS = [
+    "Hello☺ im CTRL Bot By AVATAR💪"
+]
 RAPE_STRINGS = (
      "Rape Done Drink The Cum",
      "The user has been successfully raped",
@@ -60,6 +63,12 @@ def pubg(bot: Bot, update: Update):
     # reply to correct message
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text("PUBG Chutiyo ka Game! Be lyk moi Use Tik-Tok and become Chakka")
+    
+    
+        
+@run_async
+def hi(bot: Bot, update: Update):
+    update.effective_message.reply_text(random.choice(F_STRINGS))
     
     
 
