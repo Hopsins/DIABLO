@@ -57,6 +57,10 @@ RAPE_STRINGS = (
 def bot(bot: Bot, update: Update):
     update.effective_message.reply_text(random.choice(BOT_STRINGS))
     
+    
+@run_async
+def hi(bot: Bot, update: Update):
+    update.effective_message.reply_text(random.choice(Hi_STRINGS))
 
 @run_async
 def pubg(bot: Bot, update: Update):
@@ -66,9 +70,9 @@ def pubg(bot: Bot, update: Update):
     
     
         
-@run_async
-def hi(bot: Bot, update: Update):
-    update.effective_message.reply_text(random.choice(Hi_STRINGS))
+
+
+
     
     
 
