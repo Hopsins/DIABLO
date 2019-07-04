@@ -577,7 +577,7 @@ def shrug(bot: Bot, update: Update):
     else:
         message.reply_text(default_msg)
         
-ECHO_HANDLER = CommandHandler("send", echo, filters=Filters.user(861049231)
+
         
         
 def ud(bot: Bot, update: Update, args):
