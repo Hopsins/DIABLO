@@ -62,13 +62,9 @@ def pubg(bot: Bot, update: Update):
     reply_text("PUBG Chutiyo ka Game! Be lyk moi Use Tik-Tok and become Chakka")
     
     
-@run_async
-def hi(bot: Bot, update: Update):
-    # reply to correct message
-    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
-    reply_text("Hello☺,how are you,I'm @Ctrln_bot by AVATAR|XD")
+
     
-    
+
 @run_async
 def rape(bot: Bot, update: Update):
     # reply to correct message
@@ -681,5 +677,5 @@ dispatcher.add_handler(LYRICS_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DisableAbleCommandHandler("removebotkeyboard", reply_keyboard_remove))
 dispatcher.add_handler(EXECUTE_HANDLER)
-dispatcher.add_handler(HI_HANDLER)
+
 
