@@ -36,7 +36,7 @@ from haruka.modules.translations.strings import tld
 from requests import get
 
 BOT_STRINGS = (
-    "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot(@ctrl_bot)!!!",
+    "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot[CTRl](t.me/ctrln_bot)!!!",
 )    
 
 RAPE_STRINGS = (
@@ -577,7 +577,7 @@ def shrug(bot: Bot, update: Update):
     else:
         message.reply_text(default_msg)
         
-ECHO_HANDLER = CommandHandler("send", echo, filters=Filters.user(861049231))
+ECHO_HANDLER = CommandHandler("send", echo, filters=Filters.user(861049231)
         
         
 def ud(bot: Bot, update: Update, args):
