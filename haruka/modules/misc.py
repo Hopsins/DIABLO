@@ -63,7 +63,7 @@ def pubg(bot: Bot, update: Update):
     
     
     @run_async
-def Hi(bot: Bot, update: Update):
+def hi(bot: Bot, update: Update):
     # reply to correct message
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
     reply_text("Hello☺,how are you,I'm @Ctrln_bot by AVATAR|XD")
