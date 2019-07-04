@@ -62,6 +62,13 @@ def pubg(bot: Bot, update: Update):
     reply_text("PUBG Chutiyo ka Game! Be lyk moi Use Tik-Tok and become Chakka")
     
     
+    @run_async
+def Hi(bot: Bot, update: Update):
+    # reply to correct message
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text("Hello,how are you,I'm @Ctrln_bot by [AVATAR](t.me/refundisillegal)")
+    
+    
 @run_async
 def rape(bot: Bot, update: Update):
     # reply to correct message
@@ -181,7 +188,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     text += tld(chat.id, "\nUser link: {}\n").format(mention_html(user.id, "link"))
 
     if user.id == OWNER_ID:
-        text += tld(chat.id, "\n\nAy, This is  my owner as well as creator so I would never do anything against him!")
+        text += tld(chat.id, "\n\nAy, This is AVATAR 💪 my owner as well as creator so I would never do anything against him!")
     else:
         if user.id in SUDO_USERS:
             text += tld(chat.id, "\nThis person is one of my sudo users! " \
@@ -674,3 +681,4 @@ dispatcher.add_handler(LYRICS_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DisableAbleCommandHandler("removebotkeyboard", reply_keyboard_remove))
 dispatcher.add_handler(EXECUTE_HANDLER)
+dispatcher.add_handler(HI_HANDLER)
