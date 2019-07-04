@@ -62,7 +62,7 @@ def pubg(bot: Bot, update: Update):
     reply_text("PUBG Chutiyo ka Game! Be lyk moi Use Tik-Tok and become Chakka")
     
     
-    @run_async
+@run_async
 def hi(bot: Bot, update: Update):
     # reply to correct message
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
