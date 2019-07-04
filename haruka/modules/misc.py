@@ -36,7 +36,7 @@ from haruka.modules.translations.strings import tld
 from requests import get
 
 BOT_STRINGS = (
-    "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot[CTRl](t.me/ctrln_bot)!!!",
+    "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot(@ctrln_bot)!!!",
 )    
 
 RAPE_STRINGS = (
