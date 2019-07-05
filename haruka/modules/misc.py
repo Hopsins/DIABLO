@@ -39,7 +39,7 @@ BOT_STRINGS = (
     "ｷﾀﾜァ*･゜ﾟ･*:.｡..｡.:*･゜(n‘∀‘)ηﾟ･*:.｡. .｡.:*･゜ﾟ･* !!!!! oh my god i'm a Bot(@ctrln_bot)!!!",
 )    
 
-Hi_STRINGS = [
+HI_STRINGS = [
     "Hello☺ im CTRL Bot By AVATAR💪"
 ]
 RAPE_STRINGS = (
@@ -649,6 +649,7 @@ BOT_HANDLER = DisableAbleCommandHandler("bot", bot, admin_ok=True)
 RAPE_HANDLER = DisableAbleCommandHandler("rape", rape, admin_ok=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug, admin_ok=True)
 PUBG_HANDLER = DisableAbleCommandHandler("pubg", pubg, admin_ok=True)
+HI_HANDLER = DisableAbleCommandHandler("hi", pubg, admin_ok=True)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True, admin_ok=True)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True, admin_ok=True)
 GITHUB_HANDLER = DisableAbleCommandHandler("git", github, admin_ok=True)
@@ -690,5 +691,5 @@ dispatcher.add_handler(LYRICS_HANDLER)
 dispatcher.add_handler(REPO_HANDLER)
 dispatcher.add_handler(DisableAbleCommandHandler("removebotkeyboard", reply_keyboard_remove))
 dispatcher.add_handler(EXECUTE_HANDLER)
-
+dispatcher.add_handler(PUBG_HANDLER)
 
