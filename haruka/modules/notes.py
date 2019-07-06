@@ -129,7 +129,7 @@ def cmd_get(bot: Bot, update: Update, args: List[str]):
     elif len(args) >= 1:
         get(bot, update, args[0], show_none=True)
     else:
-        update.effective_message.reply_text(tld(update.effective_chat.id, "Muh Me Lega ?"))
+        update.effective_message.reply_text(tld(update.effective_chat.id, "Get rekt__ ?"))
 
 
 @run_async
