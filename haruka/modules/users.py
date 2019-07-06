@@ -187,7 +187,7 @@ def leavechat(bot: Bot, update: Update, args: List[int]):
     try:
         chat = bot.getChat(chat_id)
         titlechat = bot.get_chat(chat_id).title
-        bot.sendMessage(chat_id, "`I'll Go Away!`")
+        bot.sendMessage(chat_id, "`I'll Go Away bye....!`")
         bot.leaveChat(chat_id)
         update.effective_message.reply_text("I'll left group {}".format(titlechat))
 
@@ -231,7 +231,7 @@ def __user_info__(user_id, chat_id):
     if user_id == dispatcher.bot.id:
         return tld(chat_id, "I've seen them in... Wow. Are they stalking me? They're in all the same places I am... oh. It's me.")
     num_chats = sql.get_user_num_chats(user_id)
-    return tld(chat_id, "I've seen them in <code>{}</code> chats in total.").format(num_chats)
+    return tld(chat_id, "I've seen this londa in <code>{}</code> chats in total.").format(num_chats)
 
 
 def __stats__():
