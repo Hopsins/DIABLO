@@ -31,7 +31,7 @@ from haruka.modules.connection import connected
 # Time spended on feds = 10h by #MrYacha
 # Time spended on reworking on the whole feds = 20+ hours by @peaktogoo
 
-LOGGER.info("Cintact at [AVATAR](T.ME/REFUNDISILLEGAL), if you are fbanned.")
+LOGGER.info("Contact at [AVATAR](T.ME/REFUNDISILLEGAL) , if you are fbanned.")
 
 FBAN_ERRORS = {
     "User is an administrator of the chat",
