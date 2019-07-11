@@ -721,7 +721,7 @@ Commands:
  - /chatfed: Show the federation the chat is in
  - /fedadmins: Show the federation admins
 
-Federations originally by @MrYacha, 75% Reworked by @peaktogoo
+Contact at [AVATAR](T.ME/REFUNDISILLEGAL),If you think ,you were fbanned by mistakenly
 """
 
 NEW_FED_HANDLER = CommandHandler("newfed", new_fed)
