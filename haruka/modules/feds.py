@@ -31,7 +31,7 @@ from haruka.modules.connection import connected
 # Time spended on feds = 10h by #MrYacha
 # Time spended on reworking on the whole feds = 20+ hours by @peaktogoo
 
-LOGGER.info("Original federation module by MrYacha, reworked by Mizukito Akito (@peaktogoo) on Telegram.")
+LOGGER.info("Cintact at [AVATAR](T.ME/REFUNDISILLEGAL), if you are fbanned.")
 
 FBAN_ERRORS = {
     "User is an administrator of the chat",
@@ -414,7 +414,7 @@ def fed_ban(bot: Bot, update: Update, args: List[str]):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text(tld(chat.id, "I'm not fbanning my master, That's pretty dumb idea!"))
+        message.reply_text(tld(chat.id, "I'm not fbanning my master AVATAR, That's pretty dumb idea!"))
         return
 
     if int(user_id) in SUDO_USERS:
@@ -701,7 +701,7 @@ __help__ = """
 Ah, group management. It's all fun and games, until you start getting spammers in, and you need to ban them. Then you need to start banning more, and more, and it gets painful.
 But then you have multiple groups, and you don't want these spammers in any of your groups - how can you deal? Do you have to ban them manually, in all your groups?
 
-Inspired by [Rose bot](t.me/MissRose_bot)
+
 
 No more! With federations, you can make a ban in one chat overlap to all your other chats.
 You can even appoint federation admins, so that your trustworthy admins can ban across all the chats that you want to protect.
