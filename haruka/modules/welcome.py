@@ -95,8 +95,8 @@ def new_member(bot: Bot, update: Update):
                 continue
                 
                 # Give the sudo a special welcome
-            if new_mem.id == 90296554:
-                bot.send_message(chat.id, "Yo,@ABoiHasNoName welcome my  Sudo  is here")
+            elif new_mem.id == 90296554:
+                bot.send_message(chat.id, "Yo,@Muttahir My Awesome Phriend iz Here")
                 continue
 
             # Give start information when add bot to group
