@@ -22,16 +22,13 @@ from haruka.modules.connection import connected
 
 PM_START = """Hi londe {}, Im  {} - Im here to help you and manage your groups!
 
-I'm a modular group management bot\nNeed any help press help button\nIm always on beb😉
-,\n
-I'm managed by my Master 😎 [AVATAR](T.ME/REFUNDISILLEGAL)  .
+I'm a modular group management bot\n\nNeed any help press help button\nIm always on beb😉
+\n
+I'm managed by my Master 😎 [AVATAR](T.ME/REFUNDISILLEGAL) 
 
-Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlhelpsupport).\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
+Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlhelpsupport)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for [my creator](t.me/Muttahir) to get me to where I am now, and every donation helps \
-motivate him to make me even better. All the donation money will go to a better VPS to host me \. 
-https://orangefox.tech/donate."""
+
 
 
 IMPORTED = {}
