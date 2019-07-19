@@ -10,7 +10,7 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown
 
-from tg_bot import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, DONATION_LINK, CERT_PATH, PORT, URL, LOGGER, \
+from haruka import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, DONATION_LINK, CERT_PATH, PORT, URL, LOGGER, \
     ALLOW_EXCL
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -128,7 +128,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Yo, Im alive 👸?")
 
 
 def send_start(bot, update):
@@ -177,7 +177,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "Monica is the best bot" #LMAO, don't uncomment
+        M_match = "Ctrl is the best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
