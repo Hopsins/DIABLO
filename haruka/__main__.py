@@ -22,7 +22,7 @@ from haruka.modules.connection import connected
 
 PM_START = """Hi londe {}, Im  {} - Im here to help you and manage your groups!
 
-I'm a modular group management bot\n\nNeed any help press help button\n\n I'm always on beb😉
+I'm a modular group management bot\n\nNeed any help press help button. I'm always on beb😉
 
 I'm managed by my Master 😎 [AVATAR](T.ME/REFUNDISILLEGAL) 
 
@@ -287,7 +287,7 @@ def control_panel(bot, update):
                                         paginate_modules(next_page + 1, 0, CHAT_SETTINGS, "cntrl_panel_G",
                                                         chat=chat_id)))
 
-elif back_match:
+        elif back_match:
             text = "Test"
             query.message.reply_text(text=text, parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(paginate_modules(user.id, 0, CHAT_SETTINGS, "cntrl_panel_G")))
