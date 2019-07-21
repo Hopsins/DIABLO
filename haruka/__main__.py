@@ -103,25 +103,31 @@ def test(bot: Bot, update: Update):
 
 @run_async
 def start(bot: Bot, update: Update, args: List[str]):
+    LOGGER.info("Start")
     chat = update.effective_chat  # type: Optional[Chat]
-    query = update.callback_query
+    #query = update.callback_query #Unused variable
     if update.effective_chat.type == "private":
         if len(args) >= 1:
             if args[0].lower() == "help":
-                send_help(update.effective_chat.id, tld(chat.id, "send-help").format(""if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")))
+                send_help(update.effective_chat.id, tld(chat.id, "send-help").format(
+                     dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(
+                         chat.id, "\nAll commands can either be used with `/` or `!`.\n"
+                             )))
 
             elif args[0].lower().startswith("stngs_"):
                 match = re.match("stngs_(.*)", args[0].lower())
                 chat = dispatcher.bot.getChat(match.group(1))
 
                 if is_user_admin(chat, update.effective_user.id):
-                    send_settings(match.group(1), update.effective_user.id, user=False)
+                    send_settings(match.group(1), update.effective_user.id, update, user=False)
                 else:
-                    send_settings(match.group(1), update.effective_user.id, user=True)
+                    send_settings(match.group(1), update.effective_user.id, update, user=True)
 
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
+            elif args[0].lower() == "controlpanel":
+                control_panel(bot, update)
         else:
             send_start(bot, update)
     else:
@@ -174,7 +180,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "Ctrl is the best bot" #LMAO, don't uncomment
+        M_match = "Haruka Aya is best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
@@ -201,7 +207,7 @@ def control_panel(bot, update):
         else:
             text += "\nNo chat connected!"
 
-        keyboard += [[InlineKeyboardButton(text="Back", callback_data="bot_start")]]
+        keyboard += [[InlineKeyboardButton(text="⬅️ Back", callback_data="bot_start")]]
 
         update.effective_message.reply_text(text, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.MARKDOWN)
 
@@ -220,7 +226,7 @@ def control_panel(bot, update):
                 CHAT_SETTINGS[module].__mod_name__) + R[0]
 
             keyboard = R[1]
-            keyboard += [[InlineKeyboardButton(text="Back", callback_data="cntrl_panel_U(1)")]]
+            keyboard += [[InlineKeyboardButton(text="⬅️ Back", callback_data="cntrl_panel_U(1)")]]
                 
             query.message.reply_text(text=text, arse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(keyboard))
 
@@ -281,7 +287,7 @@ def control_panel(bot, update):
                                         paginate_modules(next_page + 1, 0, CHAT_SETTINGS, "cntrl_panel_G",
                                                         chat=chat_id)))
 
-        elif back_match:
+elif back_match:
             text = "Test"
             query.message.reply_text(text=text, parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(paginate_modules(user.id, 0, CHAT_SETTINGS, "cntrl_panel_G")))
@@ -341,25 +347,23 @@ def help_button(bot: Bot, update: Update):
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
-            query.message.reply_text(tld(chat.id, "send-help").format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")),
-                                     parse_mode=ParseMode.MARKDOWN,
-                                     reply_markup=InlineKeyboardMarkup(
-                                         paginate_modules(chat.id, curr_page - 1, HELPABLE, "help")))
+            query.message.reply_text(tld(chat.id, "send-help").format(
+                dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")
+                    ),
+                    parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(paginate_modules(chat.id, curr_page - 1, HELPABLE, "help")))
 
         elif next_match:
             next_page = int(next_match.group(1))
-            query.message.reply_text(tld(chat.id, "send-help").format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")),
-                                     parse_mode=ParseMode.MARKDOWN,
-                                     reply_markup=InlineKeyboardMarkup(
-                                         paginate_modules(chat.id, next_page + 1, HELPABLE, "help")))
+            query.message.reply_text(tld(chat.id, "send-help").format(
+                dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")
+                    ),
+                    parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(paginate_modules(chat.id, next_page + 1, HELPABLE, "help")))
 
         elif back_match:
-            query.message.reply_text(text=tld(chat.id, "send-help").format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")),
-                                     parse_mode=ParseMode.MARKDOWN,
-                                     reply_markup=InlineKeyboardMarkup(
-                                         paginate_modules(chat.id, 0, HELPABLE, "help")))
-
-
+            query.message.reply_text(text=tld(chat.id, "send-help").format(
+                dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")
+                    ),
+                    parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(paginate_modules(chat.id, 0, HELPABLE, "help")))
 
         # ensure no spinny white circle
         bot.answer_callback_query(query.id)
@@ -402,14 +406,16 @@ def get_help(bot: Bot, update: Update):
         send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text=tld(chat.id, "Back"), callback_data="help_back")]]))
 
     else:
-        send_help(chat.id, tld(chat.id, "send-help").format("" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")))
+        send_help(chat.id, tld(chat.id, "send-help").format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(
+            chat.id, "\nAll commands can either be used with `/` or `!`.\n"
+                )))
 
 
-def send_settings(chat_id, user_id, user=False):
+def send_settings(chat_id, user_id, update, user=False):
     if user:
         if USER_SETTINGS:
             settings = "\n\n".join(
-                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(user_id)) for mod in USER_SETTINGS.values())
+                "*{}*:\n{}".format(mod.__mod_name__, mod.__user_settings__(Bot, update, user_id)) for mod in USER_SETTINGS.values())
             dispatcher.bot.send_message(user_id, "These are your current settings:" + "\n\n" + settings,
                                         parse_mode=ParseMode.MARKDOWN)
 
@@ -461,7 +467,7 @@ def settings_button(bot: Bot, update: Update):
             chat = bot.get_chat(chat_id)
             query.message.reply_text(tld(user.id, "send-group-settings").format(chat.title),
                                      reply_markup=InlineKeyboardMarkup(
-                                         paginate_modules(curr_page - 1, CHAT_SETTINGS, "stngs",
+                                         paginate_modules(curr_page - 1, 0, CHAT_SETTINGS, "stngs",
                                                           chat=chat_id)))
 
         elif next_match:
@@ -470,7 +476,7 @@ def settings_button(bot: Bot, update: Update):
             chat = bot.get_chat(chat_id)
             query.message.reply_text(tld(user.id, "send-group-settings").format(chat.title),
                                      reply_markup=InlineKeyboardMarkup(
-                                         paginate_modules(next_page + 1, CHAT_SETTINGS, "stngs",
+                                         paginate_modules(next_page + 1, 0, CHAT_SETTINGS, "stngs",
                                                           chat=chat_id)))
 
         elif back_match:
@@ -500,7 +506,7 @@ def get_settings(bot: Bot, update: Update):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
     msg = update.effective_message  # type: Optional[Message]
-    args = msg.text.split(None, 1)
+    #args = msg.text.split(None, 1) #Unused variable
 
     # ONLY send settings in PM
     if chat.type != chat.PRIVATE:
@@ -515,29 +521,7 @@ def get_settings(bot: Bot, update: Update):
             text = "Click here to check your settings."
 
     else:
-        send_settings(chat.id, user.id, True)
-
-
-@run_async
-def donate(bot: Bot, update: Update):
-    user = update.effective_message.from_user
-    chat = update.effective_chat  # type: Optional[Chat]
-
-    if chat.type == "private":
-        update.effective_message.reply_text(DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-
-        if OWNER_ID != 90296554 and DONATION_LINK:
-            update.effective_message.reply_text("You can also donate to the person currently running me "
-                                                "[here]({})".format(DONATION_LINK),
-                                                parse_mode=ParseMode.MARKDOWN)
-
-    else:
-        try:
-            bot.send_message(user.id, DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
-
-            update.effective_message.reply_text("I've PM'ed you about donating to my creator!")
-        except Unauthorized:
-            update.effective_message.reply_text("Contact me in PM first to get donation information.")
+        send_settings(chat.id, user.id, update, True)
 
 
 def migrate_chats(bot: Bot, update: Update):
@@ -560,7 +544,7 @@ def migrate_chats(bot: Bot, update: Update):
 
 
 def main():
-    test_handler = CommandHandler("test", test)
+    #test_handler = CommandHandler("test", test) #Unused variable
     start_handler = CommandHandler("start", start, pass_args=True)
 
     help_handler = CommandHandler("help", get_help)
@@ -574,10 +558,11 @@ def main():
     dispatcher.add_handler(cntrl_panel_callback_handler)
     dispatcher.add_handler(cntrl_panel)
 
+    
+
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
@@ -587,7 +572,6 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
-    dispatcher.add_handler(donate_handler)
 
     # dispatcher.add_error_handler(error_callback)
 
@@ -596,7 +580,7 @@ def main():
 
     if WEBHOOK:
         LOGGER.info("Using webhooks.")
-        updater.start_webhook(listen="0.0.0.0",
+        updater.start_webhook(listen="127.0.0.1",
                               port=PORT,
                               url_path=TOKEN)
 
@@ -625,20 +609,21 @@ def process_update(self, update):
             self.logger.exception('An uncaught error was raised while handling the error')
         return
 
-    now = datetime.datetime.utcnow()
-    cnt = CHATS_CNT.get(update.effective_chat.id, 0)
+    if update.effective_chat: #Checks if update contains chat object
+        now = datetime.datetime.utcnow()
+        cnt = CHATS_CNT.get(update.effective_chat.id, 0)
 
-    t = CHATS_TIME.get(update.effective_chat.id, datetime.datetime(1970, 1, 1))
-    if t and now > t + datetime.timedelta(0, 1):
-        CHATS_TIME[update.effective_chat.id] = now
-        cnt = 0
-    else:
-        cnt += 1
+        t = CHATS_TIME.get(update.effective_chat.id, datetime.datetime(1970, 1, 1))
+        if t and now > t + datetime.timedelta(0, 1):
+            CHATS_TIME[update.effective_chat.id] = now
+            cnt = 0
+        else:
+            cnt += 1
 
-    if cnt > 10:
-        return
+        if cnt > 10:
+            return
+        CHATS_CNT[update.effective_chat.id] = cnt
 
-    CHATS_CNT[update.effective_chat.id] = cnt
     for group in self.groups:
         try:
             for handler in (x for x in self.handlers[group] if x.check_update(update)):
