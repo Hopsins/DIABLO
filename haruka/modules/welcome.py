@@ -99,14 +99,17 @@ def new_member(bot: Bot, update: Update):
                 bot.send_message(chat.id, "Yo,@Muttahir My Awesome Phriend iz Here")
                 continue
 
-            # Give start information when add bot to group
+            # Don't welcome yourself
             elif new_mem.id == bot.id:
                 bot.send_message(
                     MESSAGE_DUMP,
                     "I have been added to {} with ID: <pre>{}</pre>".format(chat.title, chat.id),
                     parse_mode=ParseMode.HTML
                 )
-                bot.send_message(chat.id, "Thanks for adding me into your group sweetheart make me admin to handle the group")
+                bot.send_message(
+                    update.message.chat_id,
+                    "Thanks for adding me Sweetheart. Please give me admin permission so that i can work properly."
+                )
 
             else:
                 # If welcome message is media, send with appropriate function
