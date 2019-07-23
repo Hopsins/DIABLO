@@ -22,11 +22,11 @@ from haruka.modules.connection import connected
 
 PM_START = """Hi londe {}, Im  {} - Im here to help you and manage your groups!
 
-I'm a modular group management bot\n\nNeed any help press help button. I'm always on beb😉
+I'm a modular group management bot\n\nNeed any help press help button /help. I'm always on beb😉
 
 I'm managed by my Master 😎 [AVATAR](T.ME/REFUNDISILLEGAL) 
 
-Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlhelpsupport)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
+Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlhell)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
 
 
