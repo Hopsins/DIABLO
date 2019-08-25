@@ -205,7 +205,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
                                                                          user_chat.first_name)),
                  html=True)
 
-    message.reply_text("Person has been un-gbanned.")
+    message.reply_text("Person has been un-gbanned via My Sudoers.")
 
 
 
@@ -248,7 +248,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
+        message.reply_text("Wait what,you r gabanning sudoers ,STFU ")
         return
 
     if int(user_id) in SUPPORT_USERS:
@@ -256,7 +256,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         return
 
     if user_id == bot.id:
-        message.reply_text("-_- So funny, lets gmute myself why don't I? Nice try.")
+        message.reply_text("-_- Sorry buddy, cant gmute myself ,you stfu.")
         return
 
     try:
