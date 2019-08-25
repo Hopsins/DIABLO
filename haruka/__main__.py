@@ -26,7 +26,7 @@ I'm a modular group management bot\n\nNeed any help press help button\nIm always
 \n
 I'm managed by my Master 😎 [AVATAR](T.ME/REFUNDISILLEGAL) 
 
-Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlhelpsupport)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
+Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlsupport)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
 
 
