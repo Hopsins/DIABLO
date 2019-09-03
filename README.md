@@ -1,11 +1,11 @@
-# Haruka
+# CTRL
 A modular Telegram Python bot running on python3 with an sqlalchemy database.
 
-Can be found on telegram as [Haruka Aya](https://t.me/HarukaAyaBot).
+Can be found on telegram as [CTRL](bothttps://t.me/ctrln_).
 
-Alternatively, [find me on telegram](https://t.me/peaktogoo)! (Keep all support questions in the support chat, where more people can help you.)
+Alternatively, [find me on telegram](https://t.me/Refundisillegal)! (Keep all support questions in the support chat, where more people can help you.)
 
-You can also join our support group [here!](https://t.me/HarukaAyaBot)
+You can also join our support group [here!](https://t.me/ctrlsupport)
 
 ## Thanks to
 
