@@ -1,3 +1,5 @@
+I'm so tired of people kanging my bot without authorship, respect. If you're still a human, stop doing it.
+
 # Haruka
 A modular Telegram Python bot running on python3 with an sqlalchemy database.
 
