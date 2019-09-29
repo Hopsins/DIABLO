@@ -24,7 +24,7 @@ PM_START = """Hi londe {}, Im  {} - Im here to help you and manage your groups!
 
 I'm a modular group management bot\n\nNeed any help press help button\nIm always on beb😉
 \n
-I'm managed by  😎 tg://user?id=90296554
+I'm managed by  😎 [this sexy guy](t.me/Toshiro_Hitsu)
 
 Join our official support group at [CTRL HELP SUPPORT](t.me/ctrlsupport)!\n\nWant to add me to your group? [Click here!](t.me/ctrln_bot?startgroup=true)"""
 
