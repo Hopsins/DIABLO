@@ -1,4 +1,4 @@
-Learn more or give us feedback
+
 import html
 import json
 import random
