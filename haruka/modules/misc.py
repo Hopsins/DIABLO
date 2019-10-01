@@ -745,8 +745,8 @@ __help__ = """
  - /gdpr: deletes your information from the bot's database. Private chats only.
  - /stickerid: reply to a sticker to me to tell you its file ID.
  - /getsticker: reply to a sticker to me to upload its raw PNG file.
- -/ud: Type the word or expression you want to search. For example /ud Gay
- - /wiki <keywords>: Get wikipedia articles just using this bot!
+ - /ud: Type the word or expression you want to search. For example /ud Gay
+ - /wiki: <keywords>: Get wikipedia articles just using this bot!
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
 """
 
