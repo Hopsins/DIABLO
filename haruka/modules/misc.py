@@ -14,16 +14,16 @@ from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from tg_bot import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER, MAPS_API, API_WEATHER
-from tg_bot.__main__ import GDPR
-from tg_bot.__main__ import STATS, USER_INFO
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot.modules.helper_funcs.extraction import extract_user
-from tg_bot.modules.helper_funcs.filters import CustomFilters
+from haruka import dispatcher, OWNER_ID, SUDO_USERS, SUPPORT_USERS, WHITELIST_USERS, BAN_STICKER, MAPS_API, API_WEATHER
+from haruka.__main__ import GDPR
+from haruka.__main__ import STATS, USER_INFO
+from haruka.modules.disable import DisableAbleCommandHandler
+from haruka.modules.helper_funcs.extraction import extract_user
+from haruka.modules.helper_funcs.filters import CustomFilters
 
-from tg_bot.modules.sql.translation import prev_locale
+from haruka.modules.sql.translation import prev_locale
 
-from tg_bot.modules.translations.strings import tld
+from haruka.modules.translations.strings import tld
 
 GMAPS_LOC = "https://maps.googleapis.com/maps/api/geocode/json"
 GMAPS_TIME = "https://maps.googleapis.com/maps/api/timezone/json"
