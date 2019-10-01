@@ -304,7 +304,68 @@ def info(bot: Bot, update: Update, args: List[str]):
 
     update.effective_message.reply_text(text, parse_mode=ParseMode.HTML)
 
+@run_async
+def ud(bot: Bot, update: Update):
+  message = update.effective_message
+  text = message.text[len('/ud '):]
+  results = get(f'http://api.urbandictionary.com/v0/define?term={text}').json()
+  reply_text = f'Word: {text}\nDefinition: {results["list"][0]["definition"]}'
+  message.reply_text(reply_text)
 
+
+def execute(bot: Bot, update: Update, args: List[str]):
+
+    message = update.effective_message
+    text = ' '.join(args)
+    regex = re.search('^([\w.#+]+)\s+([\s\S]+?)(?:\s+\/stdin\s+([\s\S]+))?$', text, re.IGNORECASE)
+
+    if not regex:
+        available_languages = ', '.join(languages.keys())
+        message.reply_text('*The availale languages are:*\n`{}`'.format(available_languages), parse_mode=ParseMode.MARKDOWN)
+        return
+
+    language = regex.group(1)
+    code = regex.group(2)
+    stdin = regex.group(3)
+
+    try:
+        regexter = Rextester(language, code, stdin)
+    except CompilerError as exc: # Exception on empy code or missing output
+        message.reply_text(exc)
+        return
+
+    output = ""
+    output += "*Language:*\n`{}`".format(language)
+    output += "*\n\nSource:*\n`{}`".format(code)
+
+    if regexter.result:
+        output += "*\n\nResult:*\n`{}`".format(regexter.result)
+
+    if regexter.warnings:
+        output += "\n\n*Warnings:*\n`{}`\n".format(regexter.warnings)
+
+    if regexter.errors:
+        output += "\n\n*Errors:*\n'{}`".format(regexter.errors)
+
+    message.reply_text(output, parse_mode=ParseMode.MARKDOWN)
+
+
+def wiki(bot: Bot, update: Update):
+    kueri = re.split(pattern="wiki", string=update.effective_message.text)
+    wikipedia.set_lang("en")
+    if len(str(kueri[1])) == 0:
+        update.effective_message.reply_text("Enter keywords!")
+    else:
+        try:
+            pertama = update.effective_message.reply_text("🔄 Loading...")
+            keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(text="🔧 More Info...", url=wikipedia.page(kueri).url)]])
+            bot.editMessageText(chat_id=update.effective_chat.id, message_id=pertama.message_id, text=wikipedia.summary(kueri, sentences=10), reply_markup=keyboard)
+        except wikipedia.PageError as e:
+            update.effective_message.reply_text(f"⚠ Error: {e}")
+        except BadRequest as et :
+            update.effective_message.reply_text(f"⚠ Error: {et}")
+ 
+ 
 @run_async
 def echo(bot: Bot, update: Update):
     message = update.effective_message
@@ -684,6 +745,8 @@ __help__ = """
  - /gdpr: deletes your information from the bot's database. Private chats only.
  - /stickerid: reply to a sticker to me to tell you its file ID.
  - /getsticker: reply to a sticker to me to upload its raw PNG file.
+ -/ud: Type the word or expression you want to search. For example /ud Gay
+ - /wiki <keywords>: Get wikipedia articles just using this bot!
  - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
 """
 
@@ -710,7 +773,10 @@ GDPR_HANDLER = CommandHandler("gdpr", gdpr, filters=Filters.private)
 WEATHER_HANDLER = DisableAbleCommandHandler("weather", weather, pass_args=True)
 STICKER_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 STICKERID_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
+UD_HANDLER = DisableAbleCommandHandler("ud", ud)
+WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki)
 
+dispatcher.add_handler(UD_HANDLER)
 dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
@@ -727,3 +793,4 @@ dispatcher.add_handler(PING_HANDLER)
 dispatcher.add_handler(WEATHER_HANDLER)
 dispatcher.add_handler(STICKER_HANDLER)
 dispatcher.add_handler(STICKERID_HANDLER)
+dispatcher.add_handler(WIKI_HANDLER)
