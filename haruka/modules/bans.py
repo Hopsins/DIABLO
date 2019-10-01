@@ -102,7 +102,7 @@ async def unban(message, strings, status, chat_id, chat_title):
         user_str = await user_link_html(user['user_id'])
         text = strings["user_unbanned"]
 
-        if gbanned := mongodb.blacklisted_users.find_one({'user_id': user['user_id']}):
+        if gbanned := .blacklisted_users.find_one({'user_id': user['user_id']}):
             text += strings["user_gbanned"].format(reason=gbanned['reason'])
             mongodb.blacklisted_users.update_one(
                 {'_id': gbanned['_id']},
