@@ -1,4 +1,4 @@
-# CTRL
+# DIABLO
 A modular Telegram Python bot running on python3 with an sqlalchemy database.
 
 Can be found on telegram as [CTRL](bothttps://t.me/ctrln_).
